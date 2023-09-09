@@ -1,0 +1,105 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 10px;
+    border-color: black;
+    border-style: solid;
+    box-shadow:10px 5px 5px gray ;
+    max-width: 400px;
+    border-radius: 5%;
+    margin-bottom: 30px;
+}
+
+.card-header-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.movie-content {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.actor-content {
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.add-modal, .update-modal {
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ gap: 30px;
+}
+.Delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+   }
+
+.add-details {
+    margin-bottom: 20px;
+    width: 20%;
+    background-color: #cecece; /* Blue color, you can change it */
+    color: black;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+
+.update-details, .delete-details {
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: #cecece; /* Blue color, you can change it */
+    color: black;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.add-details:hover, .update-details:hover, .delete-details:hover{
+    background-color: #6d6565;
+}
+
+.toggle-div, .login-div, .logout-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    margin-top: 20px;
+}
+
+.toggle-details, .login, .logout {
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 20%;
+    background-color: #cecece; /* Blue color, you can change it */
+    color: black;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.toggle-details:hover, .login:hover, .logout:hover {
+    background-color: #6d6565;
+}
