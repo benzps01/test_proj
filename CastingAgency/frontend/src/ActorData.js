@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'https://render-capstone-backend.onrender.com';
+const baseUrl = 'http://127.0.0.1:5000';
 
 const fetchActorDetails = async () => {
   try {
@@ -11,7 +11,7 @@ const fetchActorDetails = async () => {
       },
     };
     const response = await axios.get(`${baseUrl}/actors`, axiosConfig);
-    return response.data;
+    return response.data['actors_dict'];
   } catch (error) {
     console.log('Error fetching data:', error);
     return [];
