@@ -3,9 +3,9 @@ import json
 import os, random, sys
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
+from sqlalchemy.dialects import postgresql
 from flask_cors import CORS
 from models import db, setup_db, Movie, Actor
-from sqlalchemy.dialects import postgresql
 from auth import AuthError, requires_auth
 
 
