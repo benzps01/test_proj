@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import "./AddActorModal.css";
+import React, { useState } from 'react';
+import './AddActorModal.css';
 
 function AddActorModal(props) {
   const [newActorData, setNewActorData] = useState({
-    name: "",
-    age: "",
-    gender: "",
+    name: '',
+    age: '',
+    gender: '',
   });
 
   const handleChange = (e) => {
@@ -20,50 +20,50 @@ function AddActorModal(props) {
     props.onAdd(newActorData);
 
     // Clear the form and close the modal
-    setNewActorData({ name: "", age: "", gender: "" });
+    setNewActorData({ name: '', age: '', gender: '' });
     props.onClose();
   };
 
   return (
-    <div className="modal-container">
-      <div className="modal-content">
-        <span className="close-button" onClick={props.onClose}>
+    <div className='modal-container'>
+      <div className='modal-content'>
+        <span className='close-button' onClick={props.onClose}>
           &times;
         </span>
         <h2>Add Actor</h2>
         <form>
-          <div className="form-group">
-            <label htmlFor="name">Name: </label>
+          <div className='form-group'>
+            <label htmlFor='name'>Name: </label>
             <input
-              type="text"
-              name="name"
-              className="form-input"
+              type='text'
+              name='name'
+              className='form-input'
               value={newActorData.name}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="age">Age: </label>
+          <div className='form-group'>
+            <label htmlFor='age'>Age: </label>
             <input
-              type="text"
-              name="age"
-              className="form-input"
+              type='text'
+              name='age'
+              className='form-input'
               value={newActorData.age}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="gender">Gender: </label>
+          <div className='form-group'>
+            <label htmlFor='gender'>Gender: </label>
             <input
-              type="text"
-              name="gender"
-              className="form-input"
+              type='text'
+              name='gender'
+              className='form-input'
               value={newActorData.gender}
               onChange={handleChange}
             />
           </div>
         </form>
-        <button onClick={handleSubmit} className="submit-button">
+        <button onClick={handleSubmit} className='submit-button'>
           Add Actor
         </button>
       </div>
