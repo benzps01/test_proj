@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import "./AddActorModal.css";
+import React, { useState } from 'react';
+import './AddActorModal.css';
 
 function AddMovieModal(props) {
   const [newMovieData, setNewMovieData] = useState({
-    title: "",
-    release_date: "",
-    genre: "",
-    actor_id: "",
+    title: '',
+    release_date: '',
+    genre: '',
+    actor_id: '',
   });
 
   const handleChange = (e) => {
@@ -21,60 +21,60 @@ function AddMovieModal(props) {
     props.onAdd(newMovieData);
 
     // Clear the form and close the modal
-    setNewMovieData({ title: "", release_date: "", genre: "", actor_id: "" });
+    setNewMovieData({ title: '', release_date: '', genre: '', actor_id: '' });
     props.onClose();
   };
 
   return (
-    <div className="modal-container">
-      <div className="modal-content">
-        <span className="close-button" onClick={props.onClose}>
+    <div className='modal-container'>
+      <div className='modal-content'>
+        <span className='close-button' onClick={props.onClose}>
           &times;
         </span>
         <h2>Add Movie</h2>
         <form>
-          <div className="form-group">
-            <label htmlFor="title">Title: </label>
+          <div className='form-group'>
+            <label htmlFor='title'>Title: </label>
             <input
-              type="text"
-              name="title"
-              className="form-input"
+              type='text'
+              name='title'
+              className='form-input'
               value={newMovieData.title}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="release_date">Release Date: </label>
+          <div className='form-group'>
+            <label htmlFor='release_date'>Release Date: </label>
             <input
-              type="text"
-              name="release_date"
-              className="form-input"
+              type='text'
+              name='release_date'
+              className='form-input'
               value={newMovieData.release_date}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="genre">Genre: </label>
+          <div className='form-group'>
+            <label htmlFor='genre'>Genre: </label>
             <input
-              type="text"
-              name="genre"
-              className="form-input"
+              type='text'
+              name='genre'
+              className='form-input'
               value={newMovieData.genre}
               onChange={handleChange}
             />
           </div>
-          <div className="form-group">
-            <label htmlFor="actor_id">Actor ID: </label>
+          <div className='form-group'>
+            <label htmlFor='actor_id'>Actor ID: </label>
             <input
-              type="text"
-              name="actor_id"
-              className="form-input"
+              type='text'
+              name='actor_id'
+              className='form-input'
               value={newMovieData.actor_id}
               onChange={handleChange}
             />
           </div>
         </form>
-        <button onClick={handleSubmit} className="submit-button">
+        <button onClick={handleSubmit} className='submit-button'>
           Add Actor
         </button>
       </div>
