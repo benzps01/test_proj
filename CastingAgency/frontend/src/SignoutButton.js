@@ -6,8 +6,14 @@ function HLOButton() {
 
   const handleLogout = () => {
     localStorage.removeItem('access_token');
+    document.cookie =
+      'access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
     localStorage.removeItem('user_info');
-    window.location.href = 'https://render-capstone-backend.onrender.com';
+    document.cookie =
+      'user_info=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+    window.location.href = 'http://127.0.0.1:3000';
   };
 
   useEffect(() => {
