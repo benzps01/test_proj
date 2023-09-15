@@ -10,6 +10,8 @@ function MovieCard(props) {
   const [canDeleteMovie, setCanDeleteMovie] = useState(false);
   const [canUpdateMovie, setCanUpdateMovie] = useState(false);
 
+  const baseURL = 'http://127.0.0.1:5000';
+
   const handleUpdateClick = (movie) => {
     setSelectedMovie(movie);
   };
@@ -22,7 +24,6 @@ function MovieCard(props) {
     },
   };
 
-  const baseURL = 'https://render-capstone-backend.onrender.com';
   const handleDelete = (movie_id) => {
     axios
       .delete(`${baseURL}/movies/${movie_id}`, axiosConfig)
@@ -74,9 +75,10 @@ function MovieCard(props) {
           </header>
           <div className='movie-content'>
             <u>Movie - Details:</u>
+            <p>Movie Id: {movie.id}</p>
+            <p>Actor Id: {movie.actor_id}</p>
             <p>Release Date: {movie.release_date}</p>
             <p>Genre: {movie.genre}</p>
-            <p>Actor Id: {movie.actor_id}</p>
           </div>
           <div className='update-modal'>
             <button
