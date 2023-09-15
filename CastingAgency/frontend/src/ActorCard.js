@@ -4,13 +4,13 @@ import './Card.css';
 import UpdateActorModal from './UpdateActorModal';
 import jwt_decode from 'jwt-decode';
 
-const baseURL = 'https://render-capstone-backend.onrender.com';
-
 function ActorCard(props) {
   const [selectedActor, setSelectedActor] = useState(null);
   const [canAddActor, setCanAddActor] = useState(false);
   const [canDeleteActor, setCanDeleteActor] = useState(false);
   const [canUpdateActor, setCanUpdateActor] = useState(false);
+
+  const baseURL = 'http://127.0.0.1:5000';
 
   const handleUpdateClick = (actor) => {
     setSelectedActor(actor);
@@ -72,6 +72,7 @@ function ActorCard(props) {
         <div className='card'>
           <div className='actor-content' key={actorIndex}>
             <u>Actor - Details:</u>
+            <p>Actor Id: {actor.id}</p>
             <p>Name: {actor.name}</p>
             <p>Age: {actor.age}</p>
             <p>Gender: {actor.gender}</p>
