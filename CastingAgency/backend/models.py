@@ -10,8 +10,8 @@ import json
 # This is the database_path definition 1 - local database, 2 - render database
 # -----------------------------------------------------------------------------------------------!
 load_dotenv()
-# database_path = f'postgresql://{os.getenv("DB_USER")}:{os.getenv("DB_PASSWORD")}@{os.getenv("DB_HOST")}/{os.getenv("DB_NAME")}'
-database_path = "postgresql://casts:0Pi3F0CqpbvvW1gto89OG51CoW2bXLA5@dpg-cjvmv2p5mpss73912h9g-a/castingagency_kuu2"
+database_path = f'postgresql://{os.getenv("DB_USER")}:{os.getenv("DB_PASSWORD")}@{os.getenv("DB_HOST")}/{os.getenv("DB_NAME")}'
+# database_path = "postgresql://casts:0Pi3F0CqpbvvW1gto89OG51CoW2bXLA5@dpg-cjvmv2p5mpss73912h9g-a/castingagency_kuu2"
 db = SQLAlchemy()
 
 
