@@ -18,6 +18,8 @@ function App() {
   const [isMovieModalOpen, setIsMovieModalOpen] = useState(false);
   const [refreshData, setRefreshData] = useState(false);
 
+  const baseURL = 'http://127.0.0.1:5000';
+
   useEffect(() => {
     fetchActorDetails()
       .then((data) => {
@@ -67,6 +69,16 @@ function App() {
     setIsMovieModalOpen(false);
   };
 
+  const fetchMovieDataOnToggle = () => {
+    fetchMovieDetails()
+      .then((data) => {
+        setMovieDetails(data);
+      })
+      .catch((error) => {
+        console.log('Error fetching Movie data:', error);
+      });
+  };
+
   const token = localStorage.getItem('access_token');
 
   const axiosConfig = {
@@ -75,7 +87,6 @@ function App() {
     },
   };
 
-  const baseURL = 'https://render-capstone-backend.onrender.com';
   const addActor = (newActorData) => {
     axios
       .post(`${baseURL}/actors`, newActorData, axiosConfig)
@@ -107,7 +118,11 @@ function App() {
     <div>
       <HUButton />
       <HLOButton />
-      <ToggleButton isOn={isOn} updateIsOn={updateIsOn} />
+      <ToggleButton
+        isOn={isOn}
+        updateIsOn={updateIsOn}
+        fetchData={fetchMovieDataOnToggle}
+      />
       {isOn ? (
         <MovieCard
           movieDetails={movieDetails}
