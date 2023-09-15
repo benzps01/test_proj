@@ -9,6 +9,8 @@ function UpdateActorModal(props) {
     gender: props.actor.gender,
   });
 
+  const baseURL = 'http://127.0.0.1:5000';
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUpdatedActor({
@@ -25,7 +27,6 @@ function UpdateActorModal(props) {
     },
   };
 
-  const baseURL = 'https://render-capstone-backend.onrender.com';
   const handleUpdate = () => {
     axios
       .patch(`${baseURL}/actors/${props.actor.id}`, updatedActor, axiosConfig)
